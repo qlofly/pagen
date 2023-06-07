@@ -3,82 +3,117 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/gen_passwd_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="TextView"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ToggleButton
-        android:id="@+id/numbersButton"
-        android:layout_width="128dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="23dp"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toTopOf="@+id/lettersButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/useNumbers"
-        app:layout_constraintTop_toBottomOf="@+id/gen_passwd_text" />
-
-    <TextView
-        android:id="@+id/useNumbers"
-        android:layout_width="220dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginBottom="23dp"
-        android:text="Use numbers"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/useLetters"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gen_passwd_text" />
-
-    <TextView
-        android:id="@+id/useLetters"
-        android:layout_width="220dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginBottom="301dp"
-        android:text="Use letters"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/useNumbers" />
-
-    <ToggleButton
-        android:id="@+id/lettersButton"
-        android:layout_width="128dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="301dp"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/useLetters"
-        app:layout_constraintTop_toBottomOf="@+id/numbersButton" />
+    android:layout_height="match_parent"
+    android:background="#d7fbe8"
+    android:paddingLeft="20dp"
+    android:paddingEnd="20dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/genButton"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_margin="15dp"
-        android:text="Button"
+        android:background="@drawable/button_shape"
+        android:text="Generate"
+        android:textColor="@android:color/secondary_text_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/genPasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_field"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="48dp"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Password"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="Length: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genPasswordText" />
+
+    <TextView
+        android:id="@+id/lenNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/genPasswordText" />
+
+    <SeekBar
+        android:id="@+id/lengthPasswd"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Settings"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthPasswd" />
+
+    <CheckBox
+        android:id="@+id/numBox"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_field"
+        android:text="Numbers"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <CheckBox
+        android:id="@+id/specBox"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_field"
+        android:text="Special characters"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
