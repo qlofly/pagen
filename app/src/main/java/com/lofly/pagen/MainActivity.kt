@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val seekBar = findViewById<SeekBar>(binding.lengthPasswd.id)
+        val seekBar = binding.lengthPasswd
         seekBar.max = 32
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
                 binding.lenNumber.text = progress.toString()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                // Начало изменения
             }
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
